@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../assets/img/logo.svg";
 import { Menus, MenuProps } from "../../routes/Menus.ts";
+import { NavLink } from "react-router-dom";
 const SideBar = () => {
   return (
     <>
-      <div className="relative bg-pinkBackground bg-gradient-custom h-screen min-w-[320px] max-w-[25%]">
+      <div className="relative bg-pinkBackground bg-gradient-custom min-w-[320px] max-w-[25%]">
         <div className="text-center border-b border-pink-500 py-5">
           <img src={logo} alt="Career Cruise" className="m-auto" />
         </div>
@@ -17,7 +18,9 @@ const SideBar = () => {
                     className="flex items-center gap-2 cursor-pointer"
                     key={menu?.title}
                   >
-                    <FontAwesomeIcon icon={menu.icon} /> {menu?.title}
+                    <NavLink to={menu.path}>
+                      <FontAwesomeIcon icon={menu.icon} /> {menu?.title}
+                    </NavLink>
                   </li>
                 );
               })}

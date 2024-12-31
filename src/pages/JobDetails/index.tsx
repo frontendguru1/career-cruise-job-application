@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+
 const JobDetails = () => {
-  return <div>Job Details...</div>;
+  const { id } = useParams();
+  return <div>Param is: {id}</div>;
 };
 
 export default JobDetails;
