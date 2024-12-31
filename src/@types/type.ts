@@ -5,7 +5,7 @@ export type ButtonPrimaryProps = {
 };
 
 export interface PageHeaderProps {
-  title: string;
+  title: string | undefined;
   icon: IconDefinition;
 }
 
@@ -14,7 +14,7 @@ export interface JobProps {
   exp: string | number;
   description: string;
   skills: string[];
-  id: number;
+  id: number | string;
 }
 
 export interface JobListHeaderProps {
