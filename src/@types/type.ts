@@ -14,4 +14,15 @@ export interface JobProps {
   exp: string | number;
   description: string;
   skills: string[];
+  id: number;
+}
+
+export interface JobListHeaderProps {
+  title: string;
+  totalRecords: number | string;
+  renderRecords: number | string;
+}
+
+export interface JobListComponentProps extends JobListHeaderProps {
+  data: JobProps[];
 }
