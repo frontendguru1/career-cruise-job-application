@@ -1,7 +1,8 @@
-import { JobList } from "./pages";
+import { RouterProvider } from "react-router-dom";
+import { appRoutes } from "./routes/AppRouting";
 
 function App() {
-  return <JobList />;
+  return <RouterProvider router={appRoutes} />;
 }
 
 export default App;

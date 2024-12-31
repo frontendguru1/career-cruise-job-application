@@ -13,7 +13,7 @@ const PageHeader = ({ title, icon }: PageHeaderProps) => {
         </div>
         {/* User dropdown */}
         <div className="pl-7 flex items-center gap-3 cursor-pointer">
-          <div className="rounded-full w-8 h-8 bg-gray-600 border-pinkBackground border-2"></div>
+          <div className="rounded-full w-10 h-10 bg-gray-600 border-pinkBackground border"></div>
           <div className="text-sm">John Smith</div>
         </div>
       </div>
