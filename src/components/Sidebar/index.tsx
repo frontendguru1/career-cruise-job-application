@@ -9,16 +9,20 @@ const SideBar = () => {
         <div className="text-center border-b border-pink-500 py-5">
           <img src={logo} alt="Career Cruise" className="m-auto" />
         </div>
-        <div className="p-9">
-          <ul className="list-none text-[16px] text-white flex flex-col gap-10">
+        <div className="p-0">
+          <ul className="list-none text-[16px] text-white">
             {Menus &&
               Menus.map((menu: MenuProps) => {
                 return (
-                  <li
-                    className="flex items-center gap-2 cursor-pointer"
-                    key={menu?.title}
-                  >
-                    <NavLink to={menu.path}>
+                  <li className="cursor-pointer" key={menu?.title}>
+                    <NavLink
+                      to={menu.path}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "bg-pinkBackground flex items-center gap-2 py-6 px-9"
+                          : "flex items-center gap-2 py-6 px-9"
+                      }
+                    >
                       <FontAwesomeIcon icon={menu.icon} /> {menu?.title}
                     </NavLink>
                   </li>
