@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
 import { ButtonPrimary } from "../../components";
+import { menusPath } from "../../routes/Menus";
 const Login = () => {
   return (
     <div className="flex size-full h-screen justify-center items-center p-5">
-      <div className="relative bg-pinkBackground bg-gradient-custom rounded-lg w-2/5 min-w-[400px]">
+      <div className="relative bg-pinkBackground bg-gradient-custom rounded-lg w-2/6 min-w-[320px]">
         <div className="text-center border-b border-pink-500 py-5">
           <img src={logo} alt="Career Cruise" className="m-auto" />
         </div>
@@ -47,7 +49,7 @@ const Login = () => {
               Forgot Password?
             </div>
             <div className="text-linkColor underline cursor-pointer">
-              New user? Sign up
+              <Link to={menusPath.signup}>New user? Sign up</Link>
             </div>
           </div>
         </div>

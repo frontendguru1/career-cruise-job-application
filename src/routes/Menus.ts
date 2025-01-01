@@ -19,6 +19,8 @@ export const menusPath = {
   addNewJob: "add-new-job",
   search: "search",
   profile: "profile",
+  login: "/login",
+  signup: "/signup",
 };
 
 export const Menus: MenuProps[] = [
