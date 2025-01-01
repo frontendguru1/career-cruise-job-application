@@ -9,9 +9,7 @@ const JobCard: React.FC<{ job: JobProps }> = ({
   return (
     <div className="border-pinkBackground border rounded-lg p-6 xs:min-w[100%] sm:min-w-[300px] sm:w-[300px] flex-1 bg-white shadow-lg">
       <div className="flex justify-between gap-3">
-        <h3 className="font-bold text-[16px]">
-          {title} {id}
-        </h3>
+        <h3 className="font-bold text-[16px]">{title}</h3>
         <div className="text-pinkBackground text-sm">{`Exp. ${exp} Years`}</div>
       </div>
       <div className="text-sm text-gray-700 pt-3">{description}</div>

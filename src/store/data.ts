@@ -8,6 +8,7 @@ export const activeJobsData: JobProps[] = [
       "Build responsive web applications using React.js and modern JavaScript.",
     skills: ["React.js", "TypeScript", "CSS Modules", "Redux"],
     id: 1,
+    salary: "$20000",
   },
   {
     title: "Backend Developer",
@@ -16,6 +17,7 @@ export const activeJobsData: JobProps[] = [
       "Develop and maintain server-side logic using Node.js and Express.",
     skills: ["Node.js", "Express.js", "MongoDB", "SQL"],
     id: 2,
+    salary: "$30000",
   },
   {
     title: "Full Stack Developer",
@@ -24,6 +26,7 @@ export const activeJobsData: JobProps[] = [
       "Work on both frontend and backend technologies to deliver end-to-end solutions.",
     skills: ["React.js", "Node.js", "TypeScript", "GraphQL"],
     id: 3,
+    salary: "$23000",
   },
   {
     title: "Java Developer",
@@ -32,6 +35,7 @@ export const activeJobsData: JobProps[] = [
       "Design and develop scalable applications using core Java and Spring Boot.",
     skills: ["Core Java", "Spring Boot", "Hibernate", "Microservices"],
     id: 4,
+    salary: "$40000",
   },
   {
     title: "DevOps Engineer",
@@ -39,6 +43,7 @@ export const activeJobsData: JobProps[] = [
     description: "Implement CI/CD pipelines and manage cloud infrastructure.",
     skills: ["Docker", "Kubernetes", "AWS", "Terraform"],
     id: 5,
+    salary: "$38000",
   },
 ];
 
@@ -50,6 +55,7 @@ export const popularJobsData: JobProps[] = [
       "Design intuitive user interfaces and enhance user experiences across web and mobile platforms.",
     skills: ["Figma", "Adobe XD", "Sketch", "Wireframing", "Prototyping"],
     id: 1,
+    salary: "$15000",
   },
   {
     title: "Mobile App Developer",
@@ -58,6 +64,7 @@ export const popularJobsData: JobProps[] = [
       "Develop high-performance mobile applications using React Native.",
     skills: ["React Native", "Redux", "JavaScript", "REST APIs", "Firebase"],
     id: 2,
+    salary: "$25000",
   },
   {
     title: "Data Scientist",
@@ -66,6 +73,7 @@ export const popularJobsData: JobProps[] = [
       "Analyze and interpret complex data to provide actionable insights.",
     skills: ["Python", "Machine Learning", "TensorFlow", "Pandas", "SQL"],
     id: 3,
+    salary: "$22000",
   },
   {
     title: "Cloud Engineer",
@@ -74,6 +82,7 @@ export const popularJobsData: JobProps[] = [
       "Design and implement scalable cloud solutions using leading cloud platforms.",
     skills: ["AWS", "Azure", "Google Cloud", "Kubernetes", "Docker"],
     id: 4,
+    salary: "$29000",
   },
   {
     title: "Cybersecurity Analyst",
@@ -88,5 +97,36 @@ export const popularJobsData: JobProps[] = [
       "Network Security",
     ],
     id: 5,
+    salary: "$21000",
+  },
+];
+
+export const similarJobsData: JobProps[] = [
+  {
+    title: "UI/UX Designer",
+    exp: 3,
+    description:
+      "Design intuitive user interfaces and enhance user experiences across web and mobile platforms.",
+    skills: ["Figma", "Adobe XD", "Sketch", "Wireframing", "Prototyping"],
+    id: 1,
+    salary: "$15000",
+  },
+  {
+    title: "Mobile App Developer",
+    exp: 2,
+    description:
+      "Develop high-performance mobile applications using React Native.",
+    skills: ["React Native", "Redux", "JavaScript", "REST APIs", "Firebase"],
+    id: 2,
+    salary: "$25000",
+  },
+  {
+    title: "Data Scientist",
+    exp: 4,
+    description:
+      "Analyze and interpret complex data to provide actionable insights.",
+    skills: ["Python", "Machine Learning", "TensorFlow", "Pandas", "SQL"],
+    id: 3,
+    salary: "$22000",
   },
 ];

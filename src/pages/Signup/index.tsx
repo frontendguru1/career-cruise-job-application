@@ -1,6 +1,8 @@
 import { SyntheticEvent } from "react";
 import logo from "../../assets/img/logo.svg";
 import { ButtonPrimary } from "../../components";
+import { Link } from "react-router-dom";
+import { menusPath } from "../../routes/Menus";
 
 const Signup = () => {
   const submitHandler = (event: SyntheticEvent) => {
@@ -132,7 +134,7 @@ const Signup = () => {
                 <ButtonPrimary label={"Sign up"} />
 
                 <div className="text-linkColor cursor-pointer underline">
-                  Already sign up? Login
+                  <Link to={menusPath.login}>Already sign up? Login</Link>
                 </div>
               </div>
             </div>

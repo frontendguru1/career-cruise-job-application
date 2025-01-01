@@ -4,7 +4,9 @@ import {
   JobDetails,
   JobList,
   Layout,
+  Login,
   SearchJob,
+  Signup,
   UserProfile,
 } from "../pages";
 import { menusPath } from "./Menus";
@@ -36,6 +38,14 @@ const routes: RouteObject[] = [
         element: <UserProfile />,
       },
     ],
+  },
+  {
+    path: menusPath.login,
+    element: <Login />,
+  },
+  {
+    path: menusPath.signup,
+    element: <Signup />,
   },
 ];
 
