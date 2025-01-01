@@ -1,0 +1,17 @@
+export const urlMapping = {
+  LOGIN: "/login",
+  REGISTER: "/register",
+  FORGOT_PASSWORD: "/forgotpassword",
+  GET_USER: "/users/:id",
+  UPDATE_USER: "/users/:id",
+  UPDATE_PROFILE_PIC: "/users/:id/picture",
+  UPDATE_PASSWORD: "/users/change-password",
+  GET_ALL_JOBS: "/jobs",
+  ADD_JOB: "/jobs",
+  GET_JOBS_BY_USER: "/jobsByUser",
+  JOB_DETAILS: "/jobs/:id",
+  UPDATE_JOB: "/jobs/:id",
+  DELETE_JOB: "/jobs/:id",
+  GET_ALL_USERS: "/users",
+  DELETE_USER: "/users/:id",
+};

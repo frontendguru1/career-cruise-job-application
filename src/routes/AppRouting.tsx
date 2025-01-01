@@ -13,6 +13,14 @@ import { menusPath } from "./Menus";
 
 const routes: RouteObject[] = [
   {
+    path: menusPath.login,
+    element: <Login />,
+  },
+  {
+    path: menusPath.signup,
+    element: <Signup />,
+  },
+  {
     path: "/",
     element: <Layout />,
     children: [
@@ -38,14 +46,6 @@ const routes: RouteObject[] = [
         element: <UserProfile />,
       },
     ],
-  },
-  {
-    path: menusPath.login,
-    element: <Login />,
-  },
-  {
-    path: menusPath.signup,
-    element: <Signup />,
   },
 ];
 

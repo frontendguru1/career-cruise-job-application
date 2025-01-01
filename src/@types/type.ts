@@ -27,3 +27,8 @@ export interface JobListHeaderProps {
 export interface JobListComponentProps extends JobListHeaderProps {
   data: JobProps[];
 }
+
+export interface loginApiProps {
+  username: string;
+  password: string;
+}
