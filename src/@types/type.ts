@@ -15,6 +15,7 @@ export interface JobProps {
   description: string;
   skills: string[];
   id: number | string;
+  salary: string;
 }
 
 export interface JobListHeaderProps {
