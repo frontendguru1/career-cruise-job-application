@@ -2,7 +2,31 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
 import { ButtonPrimary } from "../../components";
 import { menusPath } from "../../routes/Menus";
+import { useAppDispatch } from "../../hooks/redux-hook";
+import { authLoginAsync } from "../../slice/authSlice";
+// import { useEffect } from "react";
+// import { loginService } from "../../services/authServices";
 const Login = () => {
+  // useEffect(() => {
+  //   const username = "abc";
+  //   const password = "password123";
+  //   loginService({
+  //     username,
+  //     password,
+  //   });
+  // }, []);
+
+  const dispatch = useAppDispatch();
+
+  const loginHanlder = () => {
+    dispatch(
+      authLoginAsync({
+        username: "abc",
+        password: "password123",
+      })
+    );
+  };
+
   return (
     <div className="flex size-full h-screen justify-center items-center p-5">
       <div className="relative bg-pinkBackground bg-gradient-custom rounded-lg w-2/6 min-w-[320px]">
@@ -41,7 +65,7 @@ const Login = () => {
           </div>
 
           <div className="pt-7">
-            <ButtonPrimary label={"Login"} />
+            <ButtonPrimary label={"Login"} onClickHandler={loginHanlder} />
           </div>
 
           <div className="flex gap-5 justify-between pt-10">
