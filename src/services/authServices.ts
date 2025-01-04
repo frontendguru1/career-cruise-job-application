@@ -5,6 +5,7 @@ import { api } from "../utils/axiosConfig";
 export interface loginApiResponse {
   token: string | null;
   user: iUser | null;
+  data: string[] | null;
 }
 // export const loginService = async ({ username, password }: loginApiProps) => {
 //   try {
@@ -19,4 +20,4 @@ export interface loginApiResponse {
 // };
 
 export const authLoginService = (data: loginApiProps) =>
-  api.post<loginApiResponse, loginApiResponse>(urlMapping.LOGIN, data);
+  api.post(urlMapping.LOGIN, data);

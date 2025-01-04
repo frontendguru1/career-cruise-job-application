@@ -2,7 +2,7 @@ import {
   faAdd,
   faList,
   faSearch,
-  faSignOut,
+  // faSignOut,
   faUser,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
@@ -14,11 +14,11 @@ export interface MenuProps {
 }
 
 export const menusPath = {
-  jobList: "jobs",
+  jobList: "/jobs",
   jobDetails: "/job/:id",
-  addNewJob: "add-new-job",
-  search: "search",
-  profile: "profile",
+  addNewJob: "/add-new-job",
+  search: "/search",
+  profile: "/profile",
   login: "/login",
   signup: "/signup",
 };
@@ -45,9 +45,9 @@ export const Menus: MenuProps[] = [
     icon: faUser,
     path: menusPath.profile,
   },
-  {
-    title: "Logout",
-    icon: faSignOut,
-    path: "",
-  },
+  // {
+  //   title: "Logout",
+  //   icon: faSignOut,
+  //   path: "",
+  // },
 ];
