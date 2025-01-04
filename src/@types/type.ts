@@ -2,6 +2,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export type ButtonPrimaryProps = {
   label: React.ReactNode;
+  onClickHandler?: () => void;
 };
 
 export interface PageHeaderProps {
@@ -31,4 +32,15 @@ export interface JobListComponentProps extends JobListHeaderProps {
 export interface loginApiProps {
   username: string;
   password: string;
+}
+
+export interface iUser {
+  email: string;
+  role: string;
+}
+export interface authLoginState {
+  loading: boolean;
+  token: string;
+  user?: iUser | null;
+  error: null | string;
 }

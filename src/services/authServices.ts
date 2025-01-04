@@ -1,15 +1,22 @@
-import { loginApiProps } from "../@types/type";
+import { iUser, loginApiProps } from "../@types/type";
 import { urlMapping } from "../config/urlMapping";
-import { axiosInstance } from "../utils/axiosConfig";
+import { api } from "../utils/axiosConfig";
 
-export const loginService = ({ username, password }: loginApiProps) => {
-  try {
-    const response = axiosInstance.post(urlMapping.LOGIN, {
-      username,
-      password,
-    });
-    console.log(response, "response");
-  } catch (error) {
-    console.log(error);
-  }
-};
+export interface loginApiResponse {
+  token: string | null;
+  user: iUser | null;
+}
+// export const loginService = async ({ username, password }: loginApiProps) => {
+//   try {
+//     const response = api.post<loginApiResponse>(urlMapping.LOGIN, {
+//       username,
+//       password,
+//     });
+//     return response;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+export const authLoginService = (data: loginApiProps) =>
+  api.post<loginApiResponse, loginApiResponse>(urlMapping.LOGIN, data);
