@@ -43,4 +43,10 @@ export interface authLoginState {
   token: string;
   user?: iUser | null;
   error: null | string;
+  status: string;
+}
+
+export interface LoginFormProps {
+  username: string;
+  password: string;
 }
