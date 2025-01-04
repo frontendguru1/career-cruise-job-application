@@ -10,4 +10,6 @@ Run project: `npm run dev`
 2. formik
 3. yup
 4. @reduxjs/toolkit
-5. axios
+5. react-redux
+6. axios
+7. FontAwesome Icons
