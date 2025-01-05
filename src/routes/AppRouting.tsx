@@ -10,6 +10,7 @@ import {
   UserProfile,
 } from "../pages";
 import { menusPath } from "./Menus";
+import { PrivateRoute } from "../components";
 
 const routes: RouteObject[] = [
   {
@@ -22,28 +23,52 @@ const routes: RouteObject[] = [
   },
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: menusPath.jobList,
-        element: <JobList />,
+        element: (
+          <PrivateRoute>
+            <JobList />
+          </PrivateRoute>
+        ),
       },
 
       {
         path: menusPath.jobDetails,
-        element: <JobDetails />,
+        element: (
+          <PrivateRoute>
+            <JobDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: menusPath.addNewJob,
-        element: <AddNewJob />,
+        element: (
+          <PrivateRoute>
+            <AddNewJob />
+          </PrivateRoute>
+        ),
       },
       {
         path: menusPath.search,
-        element: <SearchJob />,
+        element: (
+          <PrivateRoute>
+            <SearchJob />
+          </PrivateRoute>
+        ),
       },
       {
         path: menusPath.profile,
-        element: <UserProfile />,
+        element: (
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

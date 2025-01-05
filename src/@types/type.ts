@@ -46,7 +46,23 @@ export interface authLoginState {
   status: string;
 }
 
+export interface authSignupState {
+  loading: boolean;
+  message: string;
+  error: null | string;
+  status: string;
+}
+
 export interface LoginFormProps {
   username: string;
   password: string;
+}
+
+export interface signupFormProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  userName: string;
+  password: string;
+  confirmPassword: string;
 }
