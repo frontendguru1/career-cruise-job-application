@@ -3,26 +3,18 @@ import logo from "../../assets/img/logo.svg";
 import { Menus, MenuProps, menusPath } from "../../routes/Menus.ts";
 import { NavLink, useNavigate } from "react-router-dom";
 import { faSignOut } from "@fortawesome/free-solid-svg-icons";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux-hook.ts";
+import { useAppDispatch } from "../../hooks/redux-hook.ts";
 import { logout } from "../../slice/authSlice.ts";
-import { useEffect } from "react";
+
 const SideBar = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const authToken = useAppSelector((state) => state.auth.token);
-  const status = useAppSelector((state) => state.auth.status);
 
   const logoutHandler = () => {
     dispatch(logout());
     window.localStorage.removeItem("authToken");
+    navigate(menusPath.login);
   };
-
-  useEffect(() => {
-    console.log("logged out");
-    if (!authToken && status != "succeeded") {
-      navigate(menusPath.login);
-    }
-  }, [authToken, status, navigate]);
 
   return (
     <>
