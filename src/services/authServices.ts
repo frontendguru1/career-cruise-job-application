@@ -1,4 +1,4 @@
-import { iUser, loginApiProps } from "../@types/type";
+import { iUser, loginApiProps, signupFormProps } from "../@types/type";
 import { urlMapping } from "../config/urlMapping";
 import { api } from "../utils/axiosConfig";
 
@@ -21,3 +21,6 @@ export interface loginApiResponse {
 
 export const authLoginService = (data: loginApiProps) =>
   api.post(urlMapping.LOGIN, data);
+
+export const authSignup = (data: signupFormProps) =>
+  api.post(urlMapping.REGISTER, data);
