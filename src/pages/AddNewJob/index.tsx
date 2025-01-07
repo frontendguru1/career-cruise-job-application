@@ -2,8 +2,20 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { ButtonPrimary, PageHeader } from "../../components";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux-hook";
+import { createJobAsync } from "../../slice/createJobSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { menusPath } from "../../routes/Menus";
 
 const AddNewJob = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector((state) => state.createJob.isLoading);
+  const error = useAppSelector((state) => state.createJob.error);
+  const mseeage = useAppSelector((state) => state.createJob.message);
+  const isSuccess = useAppSelector((state) => state.createJob.isSuccess);
+
   const initialValues = {
     title: "",
     description: "",
@@ -26,6 +38,19 @@ const AddNewJob = () => {
     type: Yup.string().required("This field is required"),
     skills: Yup.string().required("This field is required"),
   });
+
+  const createJobHandler = (values) => {
+    console.log(values);
+    dispatch(createJobAsync(values));
+  };
+
+  useEffect(() => {
+    console.log("isSuccess", isSuccess);
+    if (isSuccess) {
+      navigate(menusPath.jobList);
+    }
+  }, [isSuccess, navigate]);
+
   return (
     <>
       <PageHeader title={"Add a new job"} icon={faList} />
@@ -33,7 +58,7 @@ const AddNewJob = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={() => {}}
+          onSubmit={(values) => createJobHandler(values)}
         >
           {() => (
             <Form>
