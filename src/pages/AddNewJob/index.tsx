@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { ButtonPrimary, PageHeader } from "../../components";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux-hook";
-import { createJobAsync } from "../../slice/createJobSlice";
+import { createJobAsync, reset } from "../../slice/createJobSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { menusPath } from "../../routes/Menus";
@@ -11,10 +11,9 @@ import { menusPath } from "../../routes/Menus";
 const AddNewJob = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const isLoading = useAppSelector((state) => state.createJob.isLoading);
-  const error = useAppSelector((state) => state.createJob.error);
-  const mseeage = useAppSelector((state) => state.createJob.message);
-  const isSuccess = useAppSelector((state) => state.createJob.isSuccess);
+  const { isLoading, error, isSuccess } = useAppSelector(
+    (state) => state.createJob
+  );
 
   const initialValues = {
     title: "",
@@ -45,11 +44,22 @@ const AddNewJob = () => {
   };
 
   useEffect(() => {
-    console.log("isSuccess", isSuccess);
     if (isSuccess) {
       navigate(menusPath.jobList);
     }
+
+    return () => {
+      dispatch(reset());
+    };
   }, [isSuccess, navigate]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error...</div>;
+  }
 
   return (
     <>
@@ -247,8 +257,9 @@ const AddNewJob = () => {
                     className="border-2 border-gray-300 p-2 rounded-[6px] w-full"
                   >
                     <option value="">Please Select</option>
-                    <option value="fullTime">Full Time</option>
-                    <option value="partTime">Part Time</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="contract">Contract</option>
                   </Field>
                   <ErrorMessage
                     name="type"

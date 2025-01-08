@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../services/createJobService";
+import { RootState } from "@reduxjs/toolkit/query";
 
 export const createJobAsync = createAsyncThunk(
   "job/createJob",
@@ -31,7 +32,14 @@ const initialState: createJobState = {
 const createJobSlice = createSlice({
   name: "createJobSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    reset: (state) => {
+      state.isLoading = false;
+      state.isSuccess = false;
+      state.error = null;
+      state.job = {};
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(createJobAsync.pending, (state) => {
@@ -56,4 +64,5 @@ const createJobSlice = createSlice({
   },
 });
 
+export const { reset } = createJobSlice.actions;
 export default createJobSlice.reducer;
