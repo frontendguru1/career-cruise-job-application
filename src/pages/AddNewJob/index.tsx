@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux-hook";
 import { createJobAsync, reset } from "../../slice/createJobSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { menusPath } from "../../routes/Menus";
+import { ROUTES } from "../../routes/constants";
 
 const AddNewJob = () => {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const AddNewJob = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      navigate(menusPath.jobList);
+      navigate(ROUTES.JOB_LIST);
     }
 
     return () => {

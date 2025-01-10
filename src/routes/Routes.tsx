@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import {
   AddNewJob,
+  Dashboard,
+  Home,
   JobDetails,
   JobList,
   Layout,
@@ -9,16 +11,20 @@ import {
   Signup,
   UserProfile,
 } from "../pages";
-import { menusPath } from "./Menus";
+import { ROUTES } from "./constants";
 import { PrivateRoute } from "../components";
 
 const routes: RouteObject[] = [
   {
-    path: menusPath.login,
+    path: ROUTES.HOME,
+    element: <Home />,
+  },
+  {
+    path: ROUTES.LOGIN,
     element: <Login />,
   },
   {
-    path: menusPath.signup,
+    path: ROUTES.SIGN_UP,
     element: <Signup />,
   },
   {
@@ -30,7 +36,12 @@ const routes: RouteObject[] = [
     ),
     children: [
       {
-        path: menusPath.jobList,
+        index: true,
+        path: ROUTES.DASHBOARD,
+        element: <Dashboard />,
+      },
+      {
+        path: ROUTES.JOB_LIST,
         element: (
           <PrivateRoute>
             <JobList />
@@ -39,7 +50,7 @@ const routes: RouteObject[] = [
       },
 
       {
-        path: menusPath.jobDetails,
+        path: ROUTES.JOB_DETAILS,
         element: (
           <PrivateRoute>
             <JobDetails />
@@ -47,7 +58,7 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: menusPath.addNewJob,
+        path: ROUTES.ADD_NEW_JOB,
         element: (
           <PrivateRoute>
             <AddNewJob />
@@ -55,7 +66,7 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: menusPath.search,
+        path: ROUTES.SEARCH,
         element: (
           <PrivateRoute>
             <SearchJob />
@@ -63,7 +74,7 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: menusPath.profile,
+        path: ROUTES.PROFILE,
         element: (
           <PrivateRoute>
             <UserProfile />
@@ -74,4 +85,4 @@ const routes: RouteObject[] = [
   },
 ];
 
-export const appRoutes = createBrowserRouter(routes);
+export const APP_ROUTES = createBrowserRouter(routes);

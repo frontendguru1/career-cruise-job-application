@@ -1,5 +1,6 @@
 import {
   faAdd,
+  faDashboard,
   faList,
   faSearch,
   // faSignOut,
@@ -13,37 +14,45 @@ export interface MenuProps {
   path: string;
 }
 
-export const menusPath = {
-  jobList: "/jobs",
-  jobDetails: "/job/:id",
-  addNewJob: "/add-new-job",
-  search: "/search",
-  profile: "/profile",
-  login: "/login",
-  signup: "/signup",
+export const ROUTES = {
+  HOME: "/",
+  AUTH: "/auth",
+  DASHBOARD: "/dashboard",
+  JOB_LIST: "/jobs",
+  JOB_DETAILS: "/job/:id",
+  ADD_NEW_JOB: "/add-new-job",
+  SEARCH: "/search",
+  PROFILE: "/profile",
+  LOGIN: "/login",
+  SIGN_UP: "/signup",
 };
 
 export const Menus: MenuProps[] = [
   {
+    title: "Dashboard",
+    icon: faDashboard,
+    path: ROUTES.DASHBOARD,
+  },
+  {
     title: "Job List",
     icon: faList,
-    path: menusPath.jobList,
+    path: ROUTES.JOB_LIST,
   },
 
   {
     title: "Add a New Job",
     icon: faAdd,
-    path: menusPath.addNewJob,
+    path: ROUTES.ADD_NEW_JOB,
   },
   {
     title: "Search for Job",
     icon: faSearch,
-    path: menusPath.search,
+    path: ROUTES.SEARCH,
   },
   {
     title: "Profile",
     icon: faUser,
-    path: menusPath.profile,
+    path: ROUTES.PROFILE,
   },
   // {
   //   title: "Logout",
