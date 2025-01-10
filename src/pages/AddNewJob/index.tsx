@@ -2,8 +2,19 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { ButtonPrimary, PageHeader } from "../../components";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux-hook";
+import { createJobAsync, reset } from "../../slice/createJobSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../routes/constants";
 
 const AddNewJob = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { isLoading, error, isSuccess } = useAppSelector(
+    (state) => state.createJob
+  );
+
   const initialValues = {
     title: "",
     description: "",
@@ -26,6 +37,30 @@ const AddNewJob = () => {
     type: Yup.string().required("This field is required"),
     skills: Yup.string().required("This field is required"),
   });
+
+  const createJobHandler = (values) => {
+    console.log(values);
+    dispatch(createJobAsync(values));
+  };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate(ROUTES.JOB_LIST);
+    }
+
+    return () => {
+      dispatch(reset());
+    };
+  }, [isSuccess, navigate]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error...</div>;
+  }
+
   return (
     <>
       <PageHeader title={"Add a new job"} icon={faList} />
@@ -33,7 +68,7 @@ const AddNewJob = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={() => {}}
+          onSubmit={(values) => createJobHandler(values)}
         >
           {() => (
             <Form>
@@ -222,8 +257,9 @@ const AddNewJob = () => {
                     className="border-2 border-gray-300 p-2 rounded-[6px] w-full"
                   >
                     <option value="">Please Select</option>
-                    <option value="fullTime">Full Time</option>
-                    <option value="partTime">Part Time</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="contract">Contract</option>
                   </Field>
                   <ErrorMessage
                     name="type"

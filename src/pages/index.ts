@@ -9,6 +9,7 @@ import UserProfile from "./Profile";
 import Layout from "./Layout";
 import AddNewJob from "./AddNewJob";
 import SearchJob from "./Search";
+import Home from "./Home";
 
 export {
   Signup,
@@ -22,4 +23,5 @@ export {
   Layout,
   AddNewJob,
   SearchJob,
+  Home,
 };

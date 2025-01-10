@@ -1,6 +1,6 @@
 import { iUser, loginApiProps, signupFormProps } from "../@types/type";
 import { urlMapping } from "../config/urlMapping";
-import { api } from "../utils/axiosConfig";
+import { api } from "./axiosConfig";
 
 export interface loginApiResponse {
   token: string | null;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { JobProps } from "../../@types/type";
 import ButtonPrimary from "../ButtonPrimary";
-// import { menusPath } from "../../routes/Menus";
+// import { ROUTES } from "../../routes/Menus";
 
 const JobCard: React.FC<{ job: JobProps }> = ({
   job: { title, exp, description, skills, id },
