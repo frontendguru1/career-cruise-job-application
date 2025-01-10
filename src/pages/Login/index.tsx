@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
 import { ButtonPrimary } from "../../components";
-import { menusPath } from "../../routes/Menus";
+import { ROUTES } from "../../routes/constants";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux-hook";
 import { authLoginAsync } from "../../slice/authSlice";
 import { loginFormSchema } from "./loginSchema";
@@ -29,7 +29,7 @@ const Login = () => {
 
   useEffect(() => {
     if (authToken && authStatus === "succeeded") {
-      navigate(menusPath.jobList);
+      navigate(ROUTES.JOB_LIST);
     }
   }, [authToken, authStatus, navigate]);
 
@@ -98,7 +98,7 @@ const Login = () => {
               Forgot Password?
             </div>
             <div className="text-linkColor underline cursor-pointer">
-              <Link to={menusPath.signup}>New user? Sign up</Link>
+              <Link to={ROUTES.SIGN_UP}>New user? Sign up</Link>
             </div>
           </div>
         </div>

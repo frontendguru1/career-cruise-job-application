@@ -1,7 +1,7 @@
 import React from "react";
 // import { useAppSelector } from "../../hooks/redux-hook";
 import { Navigate, useLocation } from "react-router-dom";
-import { menusPath } from "../../routes/Menus";
+import { ROUTES } from "../../routes/constants";
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const isAuthenticated = window.localStorage.getItem("authToken");
@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   console.log(isAuthenticated, "isAuthenticated");
 
   if (!isAuthenticated) {
-    return <Navigate to={menusPath.login} state={{ from: location }} replace />;
+    return <Navigate to={ROUTES.LOGIN} state={{ from: location }} replace />;
   }
 
   return <>{children}</>;

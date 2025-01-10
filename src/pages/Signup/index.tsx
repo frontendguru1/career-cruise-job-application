@@ -1,7 +1,7 @@
 import logo from "../../assets/img/logo.svg";
 import { ButtonPrimary } from "../../components";
 import { Link, useNavigate } from "react-router-dom";
-import { menusPath } from "../../routes/Menus";
+import { ROUTES } from "../../routes/constants";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { signupSchema } from "./signupSchema";
 import { signupFormProps } from "../../@types/type";
@@ -28,7 +28,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (signupStatus === "succeeded") {
-      navigate(menusPath.login);
+      navigate(ROUTES.LOGIN);
     }
   }, [signupStatus, navigate]);
 
@@ -192,7 +192,7 @@ const Signup = () => {
                     <ButtonPrimary label={"Sign up"} />
 
                     <div className="text-linkColor cursor-pointer underline">
-                      <Link to={menusPath.login}>Already sign up? Login</Link>
+                      <Link to={ROUTES.LOGIN}>Already sign up? Login</Link>
                     </div>
                   </div>
                 </div>
