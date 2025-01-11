@@ -25,6 +25,7 @@ export const ROUTES = {
   PROFILE: "/profile",
   LOGIN: "/login",
   SIGN_UP: "/signup",
+  ABOUT: "/about",
 };
 
 export const Menus: MenuProps[] = [
