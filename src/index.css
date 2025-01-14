@@ -19,3 +19,8 @@ body {
 #root {
   height: 100vh;
 }
+
+.header-bg {
+  background: url('../src/assets/img/banner-bg.png') bottom center no-repeat;
+  min-height: 780px;
+}

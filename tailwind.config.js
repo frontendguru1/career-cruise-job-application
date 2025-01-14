@@ -14,6 +14,9 @@ export default {
         pinkBackground: '#ED1E79',
         bodyBg: '#F5F5F5',
         linkColor: '#FFA337',
+        orangeColor: '#FF7E14',
+        orangeColorLight: '#F1A448',
+
       },
     },
     fontFamily: {
