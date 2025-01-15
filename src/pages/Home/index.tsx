@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../routes/constants";
 import logo from "../../assets/img/logo.svg";
 import { HOME_CONTENT } from "../../store/homeContent";
+import { BriefcaseBusiness, MapPin, Search } from "lucide-react";
+import { ButtonPrimary } from "../../components";
 
 const Home = () => {
   const CONTAINER_CLASS =
@@ -78,6 +80,7 @@ const Home = () => {
 
           <div className="bg-white/75 p-7 rounded-lg mt-12 shadow-lg flex gap-4">
             <div className="bg-white h-12 border border-[#D3D3D3] flex items-center p-3">
+              <Search />
               <input
                 type="text"
                 name=""
@@ -86,14 +89,24 @@ const Home = () => {
               />
             </div>
 
-            <div>
-              <input type="text" name="" id="" />
+            <div className="bg-white h-12 border border-[#D3D3D3] flex items-center p-3">
+              <MapPin />
+              <input
+                type="text"
+                name=""
+                id=""
+                className="w-full h-full focus:outline-none"
+              />
             </div>
 
-            <div>
+            <div className="bg-white h-11 border border-[#D3D3D3] flex items-center p-3">
+              <BriefcaseBusiness />
               <select name="" id="">
                 <option>Please Select</option>
               </select>
+            </div>
+            <div className="flex-1">
+              <ButtonPrimary label={"SEARCH"} />
             </div>
           </div>
 
